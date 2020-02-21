@@ -21,10 +21,18 @@ class Block{
     static mineBlock(lastBlock, data){
         const timeStamp = Date.now();
         const lastHash = lastBlock.hash;
-        const hash = sha256.create();
+        const hash = Block.hash(timeStamp,lastHash,data); //sha256.create(`${timeStamp}${lastHash}${data}`);
         return new this(timeStamp, lastHash, hash, data);
     }
 
+    static hash(timeStamp,lastHash,data){
+        return sha256.create(`${timeStamp}${lastHash}${data}`).toString();
+    }
+
+    static blockHash(block){
+        const {timeStamp, lastHash, data} = block;
+        return sha256.create(`${timeStamp}${lastHash}${data}`)
+    }
     static GenesisTree(){
         return new this("Genesis time", '-------','Genesis-Hash', '')
     }
