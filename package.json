@@ -1,0 +1,23 @@
+{
+  "name": "Blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baskoroajis/blockchain_js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baskoroajis/blockchain_js/issues"
+  },
+  "homepage": "https://github.com/baskoroajis/blockchain_js#readme",
+  "dependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
