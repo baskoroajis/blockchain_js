@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll",
+    "dev-test": "nodemon test/dev-test"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/baskoroajis/blockchain_js#readme",
   "dependencies": {
+    "js-sha256": "^0.9.0",
+    "node-forge": "^0.9.1",
     "nodemon": "^2.0.2"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }
