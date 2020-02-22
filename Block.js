@@ -31,7 +31,7 @@ class Block{
 
     static blockHash(block){
         const {timeStamp, lastHash, data} = block;
-        return sha256.create(`${timeStamp}${lastHash}${data}`)
+        return sha256.create(`${timeStamp}${lastHash}${data}`).toString();
     }
     static GenesisTree(){
         return new this("Genesis time", '-------','Genesis-Hash', '')
