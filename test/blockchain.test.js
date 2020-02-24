@@ -30,9 +30,26 @@ describe('BlockChain', () =>{
         expect(bc.isValidChain(bc2.chain)).toBe(false);
     })
 
+
     it('add new corrupt data', () =>{
         bc2.addBlock('new foo');
         bc2.chain[1] = 'corrupt not foo';
         expect(bc.isValidChain(bc2.chain)).toBe(false);
+    })
+
+
+    it('replace chain with valid chain ', () => {
+        bc2.addBlock('newchain');
+        bc.replaceChain(bc2.chain);
+
+        expect(bc.chain).toEqual(bc2.chain);
+    })
+
+    it('replace chain with invalid data', ()=>{
+        bc.addBlock('newInvalidchain');
+        bc.replaceChain(bc2.chain);
+
+        expect(bc.chain).not.toEqual(bc2.chain);
+
     })
 })
