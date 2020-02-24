@@ -1,4 +1,4 @@
-var BlockChain = require('../BlockChain')
+var BlockChain = require('../index')
 var Block = require('../Block')
 
 describe('BlockChain', () =>{
