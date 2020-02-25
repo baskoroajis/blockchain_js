@@ -10,6 +10,7 @@ class BlockChain{
         var lastBlock = this.chain[this.chain.length-1];
         var newBlock = Block.mineBlock(lastBlock,data);
         this.chain.push(newBlock);
+        return newBlock;
     }
 
 
