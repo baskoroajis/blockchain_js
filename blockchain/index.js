@@ -19,10 +19,13 @@ class BlockChain{
         if (JSON.stringify(chain[0]) !== JSON.stringify(Block.GenesisTree())){
             return false;
         }
-
+        //check is last block in 'block' was valid in every element in chain
         for (var i=1; i <chain.length; i++){
             const lastBlock = chain[i-1];
             const block = chain[i];
+
+            // console.log('hash ', block.hash);
+            // console.log('hash ### ', Block.blockHash(block));
 
            if (block.lastHash !== lastBlock.hash || block.hash !== Block.blockHash(block)){
                return false;
