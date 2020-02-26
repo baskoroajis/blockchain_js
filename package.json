@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "dev-test": "nodemon test/dev-test",
+    "dev-test": "nodemon blockchain/test/dev-test",
     "dev": "nodemon ./app",
     "start": "node ./app"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -23,10 +26,12 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.2",
     "express": "^4.17.1",
     "js-sha256": "^0.9.0",
     "node-forge": "^0.9.1",
     "nodemon": "^2.0.2",
+    "uuid": "^7.0.1",
     "ws": "^7.2.1"
   },
   "devDependencies": {
