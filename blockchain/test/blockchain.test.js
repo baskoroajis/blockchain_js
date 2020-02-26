@@ -50,6 +50,9 @@ describe('BlockChain', () =>{
         bc.replaceChain(bc2.chain);
 
         expect(bc.chain).not.toEqual(bc2.chain);
+    })
 
+    it('decrease dificulty for slow mining', ()=>{
+        
     })
 })

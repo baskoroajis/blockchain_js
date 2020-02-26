@@ -20,7 +20,14 @@ describe('Block', () =>{
     })
 
     it('set for hash is meet with the DIFICULTY ',()=>{
-        expect(block.hash.substring(0,DIFICULTY)).toEqual('0'.repeat(DIFICULTY));
+        console.log('dddd ', block.dificulty)
+        expect(block.hash.substring(0,block.dificulty)).toEqual('0'.repeat(block.dificulty));
         console.log(block.toString());
     })
+
+    it('decrease dificulty for slow mining', ()=>{
+        expect(Block.adjustDificulty(block, block.timeStamp + 36000)).toEqual(block.dificulty -1);
+    })
+
+    
 })
